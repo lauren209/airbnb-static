@@ -9,3 +9,26 @@
     margin-bottom: 100px;
   }
 }
+
+
+.header-flat-description{
+  display: flex;
+  img{
+    height: 100px;
+    width: 100px;
+  }
+  h1{
+    font-size: 18px;
+  }
+}
+.margined{
+  padding: 20px;
+}
+.header-flat form{
+  background-color: $gray-lighter;
+  padding: 20px;
+}
+.header-flat{
+  margin: 100px;
+
+}

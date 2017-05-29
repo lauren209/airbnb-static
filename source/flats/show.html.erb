@@ -1,0 +1,67 @@
+
+<% flat = data.flats[owner] %>
+
+<div class="banner-small" style="background-image: url('<%= image_path flat.picture %>');">
+</div>
+
+
+
+<div class="header-flat">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-offset-1">
+
+        <div class="header-flat-description text-left" >
+          <div class="header-flat-owner margined">
+            <%= image_tag flat.owner_picture, class: "img-circle avatar-large" %>
+            <p><%= flat.owner_name %></p>
+          </div>
+          <div class="flat-summary margined">
+            <h1><%= flat.summary %></h1>
+            <p><%= flat.city %></p>
+            <ul class="list-inline">
+              <li><i class="fa fa-star" style= "color: #ffb400" ></i></li>
+              <li><i class="fa fa-star" style= "color: #ffb400" ></i></li>
+              <li><i class="fa fa-star" style= "color: #ffb400" ></i></li>
+              <li><i class="fa fa-star" style= "color: #ffb400" ></i></li>
+              <li><i class="fa fa-star" style= "color: #ffb400" ></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+
+        <div class="col-xs-12 col-sm-4">
+        <form action="#">
+            <h4>Book this flat</h4>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-xs-6">
+                  <input type="text" class="form-control" placeholder="checkin">
+                </div>
+                <div class="col-sm-6">
+                  <input type="text" class="form-control"  placeholder="checkout">
+                </div>
+
+              </div>
+            </div>
+
+            <div class="form-group">
+
+              <select name id class="form-control">
+                <option value="1">1 person</option>
+                <option value="2">2 people</option>
+                <option value="3">3 people</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-danger" style="width: 100%">Search</button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+</div>

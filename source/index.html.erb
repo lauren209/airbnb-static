@@ -62,66 +62,27 @@ title: Le Wagon Middleman boilerplate
   </div>
 
   <!-- Your cards code -->
-  <div class="wrapper-gray">
-    <div class="text-center">
-      <h2>Your next trip</h2>
-      <div class="container">
-        <div class="row">
-
-          <div class="col-xs-12 col-sm-4">
-            <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-paris.jpg');">
-
-              <div class="avatar-image">
-               <%= image_tag "images/seb.jpg", class: "avatar" %>
-             </div>
-             <div class="city">
-              <h3>Paris</h3>
-            </div>
-            <div class="card-description">
-              <h3>Seb's house</h3>
-              <p>Charming room with patio</p>
-            </div>
-          </div>
+ <div class="wrapper-gray">
+  <h1 class="text-center">Your next trip</h1>
+  <div class="container">
+  <div class="row">
+    <% data.flats.each do |owner, flat| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: url('<%= image_path flat.picture %>');">
+        <div class="card-category"><%= flat.city %></div>
+        <div class="card-description">
+          <h2><%= flat.name %></h2>
+          <p><%= flat.summary %></p>
         </div>
-
-        <div class="col-xs-12 col-sm-4">
-          <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-brussels.jpeg');">
-
-            <div class="avatar-image">
-             <%= image_tag "images/anne.jpg", class: "avatar" %>
-           </div>
-           <div class="city">
-            <h3>Brussels</h3>
-          </div>
-          <div class="card-description">
-            <h3>Anne's house</h3>
-            <p>Lovely house</p>
-          </div>
-        </div>
+        <%= image_tag flat.owner_picture, class:"card-user avatar-image" %>
+        <%= link_to "#", "flats/#{owner}.html", class: "card-link" %>
       </div>
-
-      <div class="col-xs-12 col-sm-4">
-        <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/card-london.jpeg');">
-
-
-
-          <div class="avatar-image">
-            <%= image_tag "images/romain.jpg", class: "avatar" %>
-          </div>
-          <div class="city">
-            <h3>London</h3>
-          </div>
-          <div class="card-description">
-            <h3>Romain's house</h3>
-            <p>Very nice flat</p>
-          </div>
-        </div>
-      </div>
-
     </div>
+    <% end %>
   </div>
 </div>
 </div>
+
 
 <!-- Your newsletter code -->
 <div class="news-letter text-center">
@@ -149,7 +110,7 @@ title: Le Wagon Middleman boilerplate
     center: myLatlng,
     scrollwheel: false,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
-  styles: [] // TODO: replace [] by array from https://snazzymaps.com/
+  styles: []
 };
 
 var map = new google.maps.Map(document.getElementById('map'), myOptions);

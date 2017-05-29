@@ -1,0 +1,22 @@
+/* Card design */
+.card{
+  height: 250px;
+  position: relative;
+  border-radius: 4px;
+}
+.city{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: white;
+}
+.card-description{
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+}
+.wrapper-gray{
+  background-color: #F4F4F4;
+  padding: 100px 0;
+}
